@@ -18,7 +18,7 @@
     "slug": {
       "type": "uid",
       "targetField": "title",
-      "required": true
+      "required": false
     },
     "publishedDate": {
       "type": "datetime",
