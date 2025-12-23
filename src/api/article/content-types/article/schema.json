@@ -1,57 +1,53 @@
 {
-  "kind": "collectionType",
-  "collectionName": "articles",
-  "info": {
-    "singularName": "article",
-    "pluralName": "articles",
-    "displayName": "Article"
-  },
-  "options": {
-    "draftAndPublish": true
-  },
-  "pluginOptions": {},
-  "attributes": {
-    "title": {
-      "type": "string",
-      "required": true
+    "kind": "collectionType",
+    "collectionName": "articles",
+    "info": {
+        "singularName": "article",
+        "pluralName": "articles",
+        "displayName": "Article"
     },
-    "slug": {
-      "type": "uid",
-      "targetField": "title",
-      "required": false
+    "options": {
+        "draftAndPublish": true
     },
-    "publishedDate": {
-      "type": "datetime",
-      "required": true
-    },
-    "coverImage": {
-      "type": "media",
-      "multiple": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
-    },
-    "views": {
-      "type": "integer",
-      "default": 0
-    },
-    "category": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::category.category",
-      "inversedBy": "articles"
-    },
-    "user": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "plugin::users-permissions.user",
-      "inversedBy": "articles"
-    },
-    "content": {
-      "type": "string"
+    "pluginOptions": {},
+    "attributes": {
+        "title": {
+            "type": "string",
+            "required": true
+        },
+        "slug": {
+            "type": "uid",
+            "targetField": "title",
+            "required": false
+        },
+        "publishedDate": {
+            "type": "datetime",
+            "required": true
+        },
+        "coverImage": {
+            "type": "media",
+            "multiple": false,
+            "allowedTypes": ["images", "files", "videos", "audios"]
+        },
+        "views": {
+            "type": "integer",
+            "default": 0
+        },
+        "category": {
+            "type": "relation",
+            "relation": "manyToOne",
+            "target": "api::category.category",
+            "inversedBy": "articles"
+        },
+        "user": {
+            "type": "relation",
+            "relation": "manyToOne",
+            "target": "plugin::users-permissions.user",
+            "inversedBy": "articles"
+        },
+
+        "content": {
+            "type": "string"
+        }
     }
-  }
 }

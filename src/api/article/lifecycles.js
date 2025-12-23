@@ -1,28 +1,22 @@
-const slugify = require('slugify');
+import { slugify } from "transliteration";
 
-module.exports = (plugin) => {
-  plugin.contentTypes.article.hooks = {
+export default {
     beforeCreate(event) {
-      const { data } = event.params;
-      if (data.title) {
-        data.slug = slugify(data.title, {
-          lower: true,
-          strict: true,
-          locale: 'ru'
-        });
-      }
+        const title = event.params.data.title;
+        console.log("EVENT DATA:", event.params);
+        console.log(title);
+        if (title) {
+            event.params.data.slug = slugify(title, { lowercase: true });
+        }
     },
-    beforeUpdate(event) {
-      const { data } = event.params;
-      if (data.title) {
-        data.slug = slugify(data.title, {
-          lower: true,
-          strict: true,
-          locale: 'ru'
-        });
-      }
-    },
-  };
 
-  return plugin;
+    beforeUpdate(event) {
+        const title = event.params.data.title;
+        console.log("EVENT DATA:", event.params);
+        console.log(title);
+
+        if (title) {
+            event.params.data.slug = slugify(title, { lowercase: true });
+        }
+    },
 };

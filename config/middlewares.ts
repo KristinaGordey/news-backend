@@ -4,33 +4,7 @@ export default ({ env }) => [
     "strapi::logger",
     "strapi::errors",
     "strapi::security",
-    // {
-    //     name: "strapi::security",
-    //     config: {
-    //         contentSecurityPolicy: {
-    //             useDefaults: true,
-    //             directives: {
-    //                 "connect-src": ["'self'", "https:"],
 
-    //                 "img-src": [
-    //                     "'self'",
-    //                     "data:",
-    //                     "blob:",
-
-    //                     "https://euksjufaiulmowpryqiq.supabase.co",
-    //                 ],
-    //                 "media-src": [
-    //                     "'self'",
-    //                     "data:",
-    //                     "blob:",
-
-    //                     "https://euksjufaiulmowpryqiq.supabase.co",
-    //                 ],
-    //                 upgradeInsecureRequests: null,
-    //             },
-    //         },
-    //     },
-    // },
     {
         name: "strapi::cors",
         config: {
